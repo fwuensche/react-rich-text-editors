@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
@@ -11,11 +11,11 @@ function App() {
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://npmtrends.com/@remirror/core-vs-@tiptap/core-vs-draft-js-vs-lexical-vs-quill-vs-slate"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Top Rich Text Editors for React
         </a>
       </header>
     </div>
