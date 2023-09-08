@@ -1,6 +1,7 @@
 {
   "name": "react-rich-text-editors",
   "version": "0.1.0",
+  "homepage": "https://fwuensche.github.io/react-rich-text-editors",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
