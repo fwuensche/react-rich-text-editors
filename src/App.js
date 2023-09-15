@@ -1,27 +1,31 @@
-import ReactMarkdown from "react-markdown";
-import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./Home";
+import Lexical from "./Lexical";
+import Quill from "./Quill";
 
-const README =
-  "https://raw.githubusercontent.com/fwuensche/react-rich-text-editors/master/README.md";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/quill",
+    element: <Quill />,
+  },
+  {
+    path: "/lexical",
+    element: <Lexical />,
+  },
+]);
 
-function App() {
-  let [content, setContent] = useState();
-
-  useEffect(() => {
-    fetch(README)
-      .then((res) => res.text())
-      .then((content) => {
-        setContent(content);
-      });
-  }, []);
-
+const App = () => {
   return (
     <div className="container">
       <Navbar />
-      <ReactMarkdown>{content}</ReactMarkdown>
+      <RouterProvider router={router} />
     </div>
   );
-}
+};
 
 export default App;
