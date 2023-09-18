@@ -23,6 +23,7 @@ We'll pick the most promising ones and try them out, i.e, implement a POC with:
 General
 
 - improve show source button to toggle code inline
+- move readme to root folder so that it's rendered on github
 
 Lexical
 

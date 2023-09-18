@@ -23,7 +23,7 @@ const InitialContentFromHtmlPlugin = ({ initialContent }) => {
       $getRoot().select();
       $insertNodes(nodes);
     });
-  }, []);
+  }, [editor, initialContent]);
 
   return null;
 };
