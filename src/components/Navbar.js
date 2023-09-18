@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav className="flex gap-3 my-3">
-      <Link className="navbar-brand" to="/">
+      <Link className="btn-light" to="/">
         Home
       </Link>
-      <Link className="navbar-brand" to="/quill">
+      <Link className="btn-light" to="/quill">
         Quill
       </Link>
-      <Link className="navbar-brand" to="/lexical">
+      <Link className="btn-light" to="/lexical">
         Lexical
       </Link>
     </nav>

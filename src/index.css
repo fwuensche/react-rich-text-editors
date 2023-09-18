@@ -4,7 +4,7 @@
 
 @layer components {
   h1 {
-    @apply text-3xl font-bold mt-9 mb-3;
+    @apply text-3xl font-bold mb-3;
   }
 
   h2 {
@@ -28,6 +28,14 @@
   }
 
   ul {
-    @apply list-disc list-inside;
+    @apply text-gray-700 list-disc list-inside mb-3;
+  }
+
+  .btn-primary {
+    @apply bg-blue-600 text-white px-4 py-2 rounded-md;
+  }
+
+  .btn-light {
+    @apply bg-white border hover:bg-gray-100 text-gray-700 px-4 py-2 rounded-full hover:no-underline text-sm;
   }
 }

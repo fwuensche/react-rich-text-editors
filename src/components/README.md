@@ -17,3 +17,14 @@ We'll pick the most promising ones and try them out, i.e, implement a POC with:
 - tables
 - image upload
 - tagging other users
+
+## Pending
+
+General
+
+- improve show source button to toggle code inline
+
+Lexical
+
+- remove the blank paragraph at the top of content below
+- add support to code blocks

@@ -7,6 +7,7 @@ import InitialContentPlugin from "./plugins/InitialContentPlugin";
 import { INITIAL_CONTENT } from "../../shared";
 import { HeadingNode } from "@lexical/rich-text";
 import { ListNode, ListItemNode } from "@lexical/list";
+import ShowSourceButton from "../ShowSourceButton";
 
 function Placeholder() {
   return <div className="editor-placeholder">Enter some rich text...</div>;
@@ -25,12 +26,7 @@ const editorConfig = {
 
 const Lexical = () => {
   return (
-    <>
-      <p>Coming next:</p>
-      <ul>
-        <li>remove the blank paragraph at the top of content below</li>
-        <li>add support to code blocks</li>
-      </ul>
+    <div className="flex flex-col">
       <LexicalComposer initialConfig={editorConfig}>
         <div className="editor-container">
           <InitialContentPlugin initialContent={INITIAL_CONTENT} />
@@ -41,7 +37,8 @@ const Lexical = () => {
           <HistoryPlugin />
         </div>
       </LexicalComposer>
-    </>
+      <ShowSourceButton editor="lexical" />
+    </div>
   );
 };
 
