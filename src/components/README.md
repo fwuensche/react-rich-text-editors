@@ -27,4 +27,3 @@ General
 Lexical
 
 - remove the blank paragraph at the top of content below
-- add support to code blocks
