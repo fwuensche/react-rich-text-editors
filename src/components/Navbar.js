@@ -1,15 +1,17 @@
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <nav className="flex gap-3 my-3">
-      <a className="navbar-brand" href="/react-rich-text-editors">
+      <Link className="navbar-brand" to="/">
         Home
-      </a>
-      <a className="navbar-brand" href="/react-rich-text-editors/quill">
+      </Link>
+      <Link className="navbar-brand" to="/quill">
         Quill
-      </a>
-      <a className="navbar-brand" href="/react-rich-text-editors/lexical">
+      </Link>
+      <Link className="navbar-brand" to="/lexical">
         Lexical
-      </a>
+      </Link>
     </nav>
   );
 };

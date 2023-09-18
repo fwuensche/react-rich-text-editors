@@ -1,29 +1,20 @@
 import Navbar from "./components/Navbar";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import Lexical from "./components/lexical/Lexical";
 import Quill from "./components/quill/Quill";
 
-const router = createBrowserRouter([
-  {
-    path: "/react-rich-text-editors",
-    element: <Home />,
-  },
-  {
-    path: "/react-rich-text-editors/quill",
-    element: <Quill />,
-  },
-  {
-    path: "/react-rich-text-editors/lexical",
-    element: <Lexical />,
-  },
-]);
-
 const App = () => {
   return (
     <div className="container">
-      <Navbar />
-      <RouterProvider router={router} />
+      <HashRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/quill" element={<Quill />} />
+          <Route path="/lexical" element={<Lexical />} />
+        </Routes>
+      </HashRouter>
     </div>
   );
 };
