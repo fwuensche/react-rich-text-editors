@@ -6,15 +6,15 @@ import Quill from "./components/quill/Quill";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/react-rich-text-editors",
     element: <Home />,
   },
   {
-    path: "/quill",
+    path: "/react-rich-text-editors/quill",
     element: <Quill />,
   },
   {
-    path: "/lexical",
+    path: "/react-rich-text-editors/lexical",
     element: <Lexical />,
   },
 ]);
