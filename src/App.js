@@ -1,8 +1,8 @@
-import Navbar from "./Navbar";
+import Navbar from "./components/Navbar";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./Home";
-import Lexical from "./Lexical";
-import Quill from "./Quill";
+import Home from "./components/Home";
+import Lexical from "./components/lexical/Lexical";
+import Quill from "./components/quill/Quill";
 
 const router = createBrowserRouter([
   {

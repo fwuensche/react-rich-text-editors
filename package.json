@@ -4,6 +4,8 @@
   "homepage": "https://fwuensche.github.io/react-rich-text-editors",
   "private": true,
   "dependencies": {
+    "@lexical/react": "^0.12.2",
+    "lexical": "^0.12.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-markdown": "^8.0.7",

@@ -1,8 +1,4 @@
-import React, { useState } from "react";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
-
-const INITIAL_VALUE = `
+export const INITIAL_CONTENT = `
 <h1>Here Some Title</h1>
 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
@@ -28,13 +24,3 @@ const foo = "bar";
 console.log(foo);
 </pre>
 `;
-
-const Quill = () => {
-  const [value, setValue] = useState(INITIAL_VALUE);
-
-  console.log(value);
-
-  return <ReactQuill theme="snow" value={value} onChange={setValue} />;
-};
-
-export default Quill;

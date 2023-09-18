@@ -1,0 +1,37 @@
+.editor-container {
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 2px;
+  max-width: 600px;
+  color: #000;
+  position: relative;
+  line-height: 20px;
+  font-weight: 400;
+  text-align: left;
+  border-radius: 10px;
+}
+
+.editor-input {
+  min-height: 150px;
+  resize: none;
+  font-size: 15px;
+  caret-color: rgb(5, 5, 5);
+  position: relative;
+  tab-size: 1;
+  outline: 0;
+  padding: 15px 15px;
+  caret-color: #444;
+}
+
+.editor-placeholder {
+  color: #999;
+  overflow: hidden;
+  position: absolute;
+  text-overflow: ellipsis;
+  top: 15px;
+  left: 15px;
+  font-size: 15px;
+  user-select: none;
+  display: inline-block;
+  pointer-events: none;
+}
