@@ -9,7 +9,7 @@ const ShowSourceButton = ({ editor }) => {
       rel="noreferrer"
       href={`https://github.com/fwuensche/react-rich-text-editors/blob/master/src/components/${editor}`}
     >
-      Show source
+      View source ↗
     </a>
   );
 };

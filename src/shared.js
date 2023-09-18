@@ -1,5 +1,5 @@
 export const INITIAL_CONTENT = `
-<h1>Here Some Title</h1>
+<h1>Majestic Title</h1>
 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
 when an unknown printer took a galley of type and scrambled it to make a type specimen book.
@@ -9,18 +9,18 @@ remaining essentially unchanged.</p>
 <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
 and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 
-<h1>And Another Title</h1>
-<p>With a list of topics:</p>
+<h1>Rich Text Editor Criteria</h1>
+<p>Here's a list of important criteria when picking a text editor:</p>
 
 <ul>
-<li>Item 1</li>
-<li>Item 2</li>
-<li>Item 3</li>
+  <li>Extensibility</li>
+  <li>Performance</li>
+  <li>Maintainability</li>
+  <li>Documentation</li>
 </ul>
 
-<p>And some code:</p>
-<pre>
-const foo = "bar";
-console.log(foo);
-</pre>
+<p>And some sample code:</p>
+
+<pre>const foo = "bar";
+console.log(foo);</pre>
 `;
