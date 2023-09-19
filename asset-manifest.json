@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/react-rich-text-editors/static/css/main.c76780fa.css",
-    "main.js": "/react-rich-text-editors/static/js/main.6e5b6fab.js",
+    "main.css": "/react-rich-text-editors/static/css/main.6a059bca.css",
+    "main.js": "/react-rich-text-editors/static/js/main.4619b14e.js",
     "static/js/787.76d3e26c.chunk.js": "/react-rich-text-editors/static/js/787.76d3e26c.chunk.js",
+    "static/media/README.md": "/react-rich-text-editors/static/media/README.e05f3cf99571acddd766.md",
     "index.html": "/react-rich-text-editors/index.html",
-    "static/media/README.md": "/react-rich-text-editors/static/media/README.ac4fb3134f0ce38035a1.md",
-    "main.c76780fa.css.map": "/react-rich-text-editors/static/css/main.c76780fa.css.map",
-    "main.6e5b6fab.js.map": "/react-rich-text-editors/static/js/main.6e5b6fab.js.map",
+    "main.6a059bca.css.map": "/react-rich-text-editors/static/css/main.6a059bca.css.map",
+    "main.4619b14e.js.map": "/react-rich-text-editors/static/js/main.4619b14e.js.map",
     "787.76d3e26c.chunk.js.map": "/react-rich-text-editors/static/js/787.76d3e26c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c76780fa.css",
-    "static/js/main.6e5b6fab.js"
+    "static/css/main.6a059bca.css",
+    "static/js/main.4619b14e.js"
   ]
 }
