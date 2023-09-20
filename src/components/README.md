@@ -1,22 +1,22 @@
 # Top Rich Text Editors for React
 
-![React rich text editors downloads over time](https://github.com/fwuensche/react-rich-text-editors/blob/master/public/images/react-rich-text-editors-downloads-over-time.png?raw=true)
-
-Source: <https://npmtrends.com/@remirror/core-vs-@tiptap/core-vs-draft-js-vs-lexical-vs-quill-vs-slate>
-
 ## Methodology
 
-We'll start by designing the desired interface for our base component.
+We first analyzed the existing open-source alternatives.
 
-We'll analyze the open-source alternatives available in the market.
+We picked the most promising ones: Quill, Lexical (coming next: TipTap)
 
-We'll pick the most promising ones and try them out, i.e, implement a POC with:
+We tried them out by implementing the following features:
 
-- All the basic use cases currently covered by Quill
-- variables
-- tables
-- image upload
-- tagging other users
+- Text formatting (bold, italic, strikethrough, underline, code)
+- Variables
+- Tables
+- Images
+- Dropdown (fill the gap from a list)
+- Emoticons
+- Links
+- Suggestion while typing
+- Switch content (e.g, male/female, informal/formal)
 
 ## Pending
 
@@ -27,4 +27,7 @@ General
 
 Lexical
 
-- remove the blank paragraph at the top of content below
+- Implement variables
+  - next to the text editor we need to have a list of variables that can be added into the content
+  - these variables are shown as a badge when editing the content
+  - the variables are replaced with corresponding data when visualizing the content
