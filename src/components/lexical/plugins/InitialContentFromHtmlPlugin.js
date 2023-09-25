@@ -12,13 +12,10 @@ const InitialContentFromHtmlPlugin = ({ initialContent }) => {
     editor.update(() => {
       const root = $getRoot();
       if (root.getTextContent() !== "") return;
-      console.log({ root });
 
       const parser = new DOMParser();
       const dom = parser.parseFromString(initialContent, "text/html");
       const nodes = $generateNodesFromDOM(editor, dom);
-
-      console.log({ nodes });
 
       $getRoot().select();
       $insertNodes(nodes);

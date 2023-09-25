@@ -9,6 +9,8 @@ import { HeadingNode } from "@lexical/rich-text";
 import { ListNode, ListItemNode } from "@lexical/list";
 import { CodeNode, CodeHighlightNode } from "@lexical/code";
 import ShowSourceButton from "../ShowSourceButton";
+import ToolbarPlugin from "./plugins/ToolbarPlugin";
+import ReplaceVariablesPlugin from "./plugins/ReplaceVariablesPlugin";
 
 function Placeholder() {
   return <div className="editor-placeholder">Enter some rich text...</div>;
@@ -41,6 +43,8 @@ const Lexical = () => {
     <div className="flex flex-col">
       <LexicalComposer initialConfig={editorConfig}>
         <div className="editor-container">
+          <ToolbarPlugin />
+          <ReplaceVariablesPlugin />
           <InitialContentFromHtmlPlugin initialContent={INITIAL_CONTENT} />
           <RichTextPlugin
             contentEditable={<ContentEditable className="editor-input" />}
