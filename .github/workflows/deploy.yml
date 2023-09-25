@@ -8,10 +8,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+
       - run: |
        git config --global user.email "f.wuensche@gmail.com"
        git config --global user.name "Flavio Wuensche"
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+
       - run: npm ci
       - run: npm run deploy
