@@ -5,8 +5,8 @@ import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext
 function injectVariableContent(node) {
   const textContent = node.getTextContent()
 
-  if (textContent.includes('{{patient_name}}')) {
-    node.setTextContent(textContent.replace('{{patient_name}}', 'John Doe'))
+  if (textContent.includes('{{medical_history}}')) {
+    node.setTextContent(textContent.replace('{{medical_history}}', '- Cancer\n- Diabetes\n- Heart disease'))
   }
 }
 

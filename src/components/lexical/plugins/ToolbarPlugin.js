@@ -519,7 +519,7 @@ const ToolbarPlugin = () => {
       editor.registerCommand(
         INSERT_VARIABLE_COMMAND,
         () => {
-          const variableNode = $createVariableNode('John Doe')
+          const variableNode = $createVariableNode('Medical History Block')
           const paragraphNode = $createParagraphNode()
           $insertNodes(variableNode)
           paragraphNode.append(variableNode)

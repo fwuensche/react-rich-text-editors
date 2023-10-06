@@ -397,34 +397,6 @@ pre::-webkit-scrollbar-thumb {
   margin: 2px;
 }
 
-/* #block-controls span.block-type.paragraph {
-  background-image: url(images/icons/text-paragraph.svg);
-}
-
-#block-controls span.block-type.h1 {
-  background-image: url(images/icons/type-h1.svg);
-}
-
-#block-controls span.block-type.h2 {
-  background-image: url(images/icons/type-h2.svg);
-}
-
-#block-controls span.block-type.quote {
-  background-image: url(images/icons/chat-square-quote.svg);
-}
-
-#block-controls span.block-type.ul {
-  background-image: url(images/icons/list-ul.svg);
-}
-
-#block-controls span.block-type.ol {
-  background-image: url(images/icons/list-ol.svg);
-}
-
-#block-controls span.block-type.code {
-  background-image: url(images/icons/code.svg);
-} */
-
 .dropdown {
   z-index: 5;
   display: block;
@@ -522,7 +494,6 @@ pre::-webkit-scrollbar-thumb {
 }
 
 .link-editor div.link-edit {
-  /* background-image: url(images/icons/pencil-fill.svg); */
   background-size: 16px;
   background-position: center;
   background-repeat: no-repeat;

@@ -10,7 +10,11 @@ remaining essentially unchanged.</p>
 and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 
 <h1>Rich Text Editor Criteria</h1>
-<p>Here's a list of important criteria when picking a text editor:</p>
+<p>Here's a list of medical history:</p>
+
+<p>{{medical_history}}</p>
+
+<p>(ideally, this would be in a list like below)</p>
 
 <ul>
   <li>Extensibility</li>
