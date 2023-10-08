@@ -8,6 +8,7 @@
     "@emotion/styled": "^11.11.0",
     "@lexical/react": "^0.12.2",
     "@mui/icons-material": "^5.14.9",
+    "@mui/joy": "^5.0.0-beta.9",
     "@mui/material": "^5.14.10",
     "lexical": "^0.12.2",
     "react": "^18.2.0",

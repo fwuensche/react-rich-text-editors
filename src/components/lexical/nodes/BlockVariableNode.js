@@ -1,19 +1,18 @@
 import { TextNode } from 'lexical'
 
-export class VariableNode extends TextNode {
+export class BlockVariableNode extends TextNode {
   static getType() {
-    return 'variable'
+    return 'block-variable'
   }
 
   static clone(node) {
-    return new VariableNode(node.__text, node.__key)
+    return new BlockVariableNode(node.__text, node.__key)
   }
 
   createDOM(config) {
-    const dom = document.createElement('span')
+    const dom = document.createElement('div')
     const inner = super.createDOM(config)
-    dom.className = this.__className
-    inner.className = 'editor-variable'
+    dom.className = 'editor-block-variable'
     dom.appendChild(inner)
     return dom
   }
@@ -28,11 +27,11 @@ export class VariableNode extends TextNode {
   }
 }
 
-export function $isVariableNode(node) {
-  return node instanceof VariableNode
+export function $isBlockVariableNode(node) {
+  return node instanceof BlockVariableNode
 }
 
-export function $createVariableNode(text) {
+export function $createBlockVariableNode(text) {
   // TODO: understand what is the purpose of the mode
-  return new VariableNode(text).setMode('token')
+  return new BlockVariableNode(text).setMode('token')
 }

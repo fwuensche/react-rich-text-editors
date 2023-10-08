@@ -1,8 +1,8 @@
-import Navbar from "./components/Navbar";
-import { HashRouter, Route, Routes } from "react-router-dom";
-import Home from "./components/Home";
-import Lexical from "./components/lexical/Lexical";
-import Quill from "./components/quill/Quill";
+import Navbar from './components/Navbar'
+import { HashRouter, Route, Routes } from 'react-router-dom'
+import Home from './components/Home'
+import Lexical from './components/lexical/Lexical'
+import Quill from './components/quill/Quill'
 
 const App = () => {
   return (
@@ -16,7 +16,7 @@ const App = () => {
         </Routes>
       </HashRouter>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App

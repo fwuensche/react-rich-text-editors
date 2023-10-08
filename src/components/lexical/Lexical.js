@@ -11,7 +11,8 @@ import { CodeNode, CodeHighlightNode } from '@lexical/code'
 import ShowSourceButton from '../ShowSourceButton'
 import ToolbarPlugin from './plugins/ToolbarPlugin'
 import VariablesPlugin from './plugins/VariablesPlugin'
-import { VariableNode } from './nodes/VariableNode'
+import { BlockVariableNode } from './nodes/BlockVariableNode'
+import { InlineVariableNode } from './nodes/InlineVariableNode'
 
 const Placeholder = () => <div className="editor-placeholder">Enter some rich text...</div>
 
@@ -34,7 +35,7 @@ const editorConfig = {
   onError(error) {
     throw error
   },
-  nodes: [ListNode, ListItemNode, HeadingNode, CodeNode, CodeHighlightNode, VariableNode],
+  nodes: [ListNode, ListItemNode, HeadingNode, CodeNode, CodeHighlightNode, BlockVariableNode, InlineVariableNode],
 }
 
 const Lexical = () => {

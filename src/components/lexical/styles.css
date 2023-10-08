@@ -546,10 +546,19 @@ pre::-webkit-scrollbar-thumb {
   vertical-align: -0.25em;
 }
 
-.editor-variable {
+.editor-inline-variable {
   padding: 2px 4px;
   border-radius: 4px;
   background-color: #eee;
   font-size: 13px;
   color: #777;
+}
+
+.editor-block-variable {
+  padding: 2px 4px;
+  border-radius: 4px;
+  background-color: #eee;
+  font-size: 13px;
+  color: #777;
+  width: 100%;
 }

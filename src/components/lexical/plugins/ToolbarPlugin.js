@@ -1,36 +1,16 @@
-import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import {
-  CAN_REDO_COMMAND,
-  CAN_UNDO_COMMAND,
-  REDO_COMMAND,
-  UNDO_COMMAND,
-  SELECTION_CHANGE_COMMAND,
-  FORMAT_TEXT_COMMAND,
-  FORMAT_ELEMENT_COMMAND,
-  $getSelection,
-  $isRangeSelection,
-  $createParagraphNode,
-  $getNodeByKey,
-  $insertNodes,
-  TextNode,
-  createCommand,
-  $createTextNode,
-} from 'lexical'
+import { $createCodeNode, $isCodeNode, getCodeLanguages, getDefaultCodeLanguage } from '@lexical/code'
 import { $isLinkNode, TOGGLE_LINK_COMMAND } from '@lexical/link'
-import { $isParentElementRTL, $wrapNodes, $isAtNodeEnd } from '@lexical/selection'
-
-import { $getNearestNodeOfType, mergeRegister, $insertNodeToNearestRoot } from '@lexical/utils'
 import {
+  $isListNode,
   INSERT_ORDERED_LIST_COMMAND,
   INSERT_UNORDERED_LIST_COMMAND,
-  REMOVE_LIST_COMMAND,
-  $isListNode,
   ListNode,
+  REMOVE_LIST_COMMAND,
 } from '@lexical/list'
-import { createPortal } from 'react-dom'
+import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { $createHeadingNode, $createQuoteNode, $isHeadingNode } from '@lexical/rich-text'
-import { $createCodeNode, $isCodeNode, getDefaultCodeLanguage, getCodeLanguages } from '@lexical/code'
+import { $isAtNodeEnd, $isParentElementRTL, $wrapNodes } from '@lexical/selection'
+import { $getNearestNodeOfType, $insertNodeToNearestRoot, mergeRegister } from '@lexical/utils'
 import {
   AlignHorizontalCenter,
   AlignHorizontalLeft,
@@ -43,7 +23,6 @@ import {
   FormatListBulleted,
   FormatListNumbered,
   FormatQuote,
-  FormatSize,
   FormatUnderlined,
   Link,
   Redo,
@@ -51,9 +30,30 @@ import {
   Subject,
   Undo,
 } from '@mui/icons-material'
-import { $createVariableNode } from '../nodes/VariableNode'
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail'
+import { Dropdown, Menu, MenuButton, MenuItem } from '@mui/joy'
+import {
+  $createParagraphNode,
+  $getNodeByKey,
+  $getSelection,
+  $insertNodes,
+  $isRangeSelection,
+  CAN_REDO_COMMAND,
+  CAN_UNDO_COMMAND,
+  FORMAT_ELEMENT_COMMAND,
+  FORMAT_TEXT_COMMAND,
+  REDO_COMMAND,
+  SELECTION_CHANGE_COMMAND,
+  UNDO_COMMAND,
+  createCommand,
+} from 'lexical'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
+import { $createBlockVariableNode } from '../nodes/BlockVariableNode'
+import { $createInlineVariableNode } from '../nodes/InlineVariableNode'
 
-const INSERT_VARIABLE_COMMAND = createCommand()
+const INSERT_INLINE_VARIABLE_COMMAND = createCommand()
+const INSERT_BLOCK_VARIABLE_COMMAND = createCommand()
 
 const LowPriority = 1
 
@@ -517,12 +517,23 @@ const ToolbarPlugin = () => {
         LowPriority
       ),
       editor.registerCommand(
-        INSERT_VARIABLE_COMMAND,
+        INSERT_BLOCK_VARIABLE_COMMAND,
         () => {
-          const variableNode = $createVariableNode('Medical History Block')
+          const blockVariableNode = $createBlockVariableNode('Medical History')
           const paragraphNode = $createParagraphNode()
-          $insertNodes(variableNode)
-          paragraphNode.append(variableNode)
+          $insertNodes(blockVariableNode)
+          paragraphNode.append(blockVariableNode)
+          $insertNodeToNearestRoot(paragraphNode)
+        },
+        LowPriority
+      ),
+      editor.registerCommand(
+        INSERT_INLINE_VARIABLE_COMMAND,
+        () => {
+          const inlineVariableNode = $createInlineVariableNode('Patient Name')
+          const paragraphNode = $createParagraphNode()
+          $insertNodes(inlineVariableNode)
+          paragraphNode.append(inlineVariableNode)
           $insertNodeToNearestRoot(paragraphNode)
         },
         LowPriority
@@ -678,9 +689,19 @@ const ToolbarPlugin = () => {
             <FormatAlignJustify />
           </button>
           <Divider />
-          <button onClick={(e) => editor.dispatchCommand(INSERT_VARIABLE_COMMAND, e)} className="toolbar-item">
-            @
-          </button>
+          <Dropdown>
+            <MenuButton className="toolbar-item">
+              <AlternateEmailIcon />
+            </MenuButton>
+            <Menu>
+              <MenuItem onClick={(e) => editor.dispatchCommand(INSERT_INLINE_VARIABLE_COMMAND, e)}>
+                Patient Name
+              </MenuItem>
+              <MenuItem onClick={(e) => editor.dispatchCommand(INSERT_BLOCK_VARIABLE_COMMAND, e)}>
+                Medical History
+              </MenuItem>
+            </Menu>
+          </Dropdown>
         </>
       )}
     </div>
