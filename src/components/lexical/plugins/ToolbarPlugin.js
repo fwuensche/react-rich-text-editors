@@ -531,10 +531,8 @@ const ToolbarPlugin = () => {
         INSERT_INLINE_VARIABLE_COMMAND,
         () => {
           const inlineVariableNode = $createInlineVariableNode('Patient Name')
-          const paragraphNode = $createParagraphNode()
-          $insertNodes(inlineVariableNode)
-          paragraphNode.append(inlineVariableNode)
-          $insertNodeToNearestRoot(paragraphNode)
+          const selection = $getSelection();
+          selection.insertNodes([inlineVariableNode]);
         },
         LowPriority
       )

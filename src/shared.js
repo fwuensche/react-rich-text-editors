@@ -13,6 +13,7 @@ and more recently with desktop publishing software like Aldus PageMaker includin
 <p>Here's a list of medical history:</p>
 
 <p>{{medical_history}}</p>
+<p><strong>^ this is a variable</strong></p>
 
 <p>(ideally, this would be in a list like below)</p>
 

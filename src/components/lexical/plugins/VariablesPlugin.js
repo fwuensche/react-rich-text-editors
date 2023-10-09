@@ -6,7 +6,11 @@ function injectVariableContent(node) {
   const textContent = node.getTextContent()
 
   if (textContent.includes('{{medical_history}}')) {
-    node.setTextContent(textContent.replace('{{medical_history}}', '- Cancer\n- Diabetes\n- Heart disease'))
+    node.setTextContent(textContent.replace('{{medical_history}}', '\n- Cancer\n- Diabetes\n- Heart disease\n'))
+  }
+
+  if (textContent.includes('{{patient_name}}')) {
+    node.setTextContent(textContent.replace('{{patient_name}}', 'John Doe'))
   }
 }
 
