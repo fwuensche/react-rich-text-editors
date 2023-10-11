@@ -1,41 +1,20 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
 
-@layer components {
-  h1 {
-    @apply text-3xl font-bold mb-3;
-  }
+.navbar {
+  margin: 12px 0;
+}
 
-  h2 {
-    @apply text-2xl font-bold mt-3 mb-3;
-  }
+.navbar button {
+  margin-right: 9px;
+}
 
-  p {
-    @apply text-gray-700 mb-3;
-  }
+.editor-container .actions {
+  border-top: 1px solid #ccc;
+}
 
-  a {
-    @apply text-blue-600 hover:underline;
-  }
-
-  .container {
-    @apply mx-auto max-w-4xl px-4;
-  }
-
-  figcaption {
-    @apply text-sm text-gray-500 w-full;
-  }
-
-  ul {
-    @apply text-gray-700 list-disc list-inside mb-3;
-  }
-
-  .btn-primary {
-    @apply bg-blue-600 text-white px-4 py-2 rounded-md;
-  }
-
-  .btn-light {
-    @apply bg-white border hover:bg-gray-100 text-gray-700 px-4 py-2 rounded-full hover:no-underline text-sm;
-  }
+.editor-shell .toolbar {
+  border: 1px solid #ccc;
 }

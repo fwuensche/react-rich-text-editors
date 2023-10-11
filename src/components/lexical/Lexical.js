@@ -2,7 +2,6 @@ import { LexicalComposer } from '@lexical/react/LexicalComposer'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ContentEditable } from '@lexical/react/LexicalContentEditable'
 import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin'
-import './styles.css'
 import InitialContentFromHtmlPlugin from './plugins/InitialContentFromHtmlPlugin'
 import { INITIAL_CONTENT } from '../../shared'
 import { HeadingNode } from '@lexical/rich-text'
@@ -13,6 +12,9 @@ import ToolbarPlugin from './plugins/ToolbarPlugin'
 import VariablesPlugin from './plugins/VariablesPlugin'
 import { BlockVariableNode } from './nodes/BlockVariableNode'
 import { InlineVariableNode } from './nodes/InlineVariableNode'
+import { EmojiNode } from './nodes/EmojiNode'
+import './styles.css'
+import EmojisPlugin from './plugins/EmojisPlugin'
 
 const Placeholder = () => <div className="editor-placeholder">Enter some rich text...</div>
 
@@ -35,7 +37,16 @@ const editorConfig = {
   onError(error) {
     throw error
   },
-  nodes: [ListNode, ListItemNode, HeadingNode, CodeNode, CodeHighlightNode, BlockVariableNode, InlineVariableNode],
+  nodes: [
+    ListNode,
+    ListItemNode,
+    HeadingNode,
+    CodeNode,
+    CodeHighlightNode,
+    BlockVariableNode,
+    InlineVariableNode,
+    EmojiNode,
+  ],
 }
 
 const Lexical = () => {
@@ -43,6 +54,7 @@ const Lexical = () => {
     <div className="flex flex-col">
       <LexicalComposer initialConfig={editorConfig}>
         <div className="editor-container">
+          <EmojisPlugin />
           <ToolbarPlugin />
           <VariablesPlugin />
           <InitialContentFromHtmlPlugin initialContent={INITIAL_CONTENT} />

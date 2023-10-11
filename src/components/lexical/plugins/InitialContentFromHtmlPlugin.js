@@ -1,28 +1,28 @@
-import { $getRoot, $insertNodes } from "lexical";
-import { useEffect } from "react";
-import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
-import { $generateNodesFromDOM } from "@lexical/html";
+import { $getRoot, $insertNodes } from 'lexical'
+import { useEffect } from 'react'
+import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
+import { $generateNodesFromDOM } from '@lexical/html'
 
 const InitialContentFromHtmlPlugin = ({ initialContent }) => {
-  const [editor] = useLexicalComposerContext();
+  const [editor] = useLexicalComposerContext()
 
   useEffect(() => {
-    if (!initialContent) return;
+    if (!initialContent) return
 
     editor.update(() => {
-      const root = $getRoot();
-      if (root.getTextContent() !== "") return;
+      const root = $getRoot()
+      if (root.getTextContent() !== '') return
 
-      const parser = new DOMParser();
-      const dom = parser.parseFromString(initialContent, "text/html");
-      const nodes = $generateNodesFromDOM(editor, dom);
+      const parser = new DOMParser()
+      const dom = parser.parseFromString(initialContent, 'text/html')
+      const nodes = $generateNodesFromDOM(editor, dom)
 
-      $getRoot().select();
-      $insertNodes(nodes);
-    });
-  }, [editor, initialContent]);
+      $getRoot().select()
+      $insertNodes(nodes)
+    })
+  }, [editor, initialContent])
 
-  return null;
-};
+  return null
+}
 
-export default InitialContentFromHtmlPlugin;
+export default InitialContentFromHtmlPlugin

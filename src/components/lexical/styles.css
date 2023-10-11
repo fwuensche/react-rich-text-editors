@@ -1,13 +1,12 @@
 .editor-container {
   border: 1px solid #ddd;
   background: #fff;
-  border-radius: 2px;
   color: #000;
   position: relative;
   line-height: 20px;
   font-weight: 400;
   text-align: left;
-  border-radius: 10px;
+  margin-bottom: 12px;
 }
 
 .editor-input {
@@ -277,7 +276,6 @@ pre::-webkit-scrollbar-thumb {
 
 .toolbar {
   display: flex;
-  margin-bottom: 1px;
   background: #fff;
   padding: 4px;
   border-top-left-radius: 10px;
@@ -338,6 +336,7 @@ pre::-webkit-scrollbar-thumb {
 }
 
 .toolbar select.toolbar-item {
+  height: inherit;
   border: 0;
   display: flex;
   background: none;

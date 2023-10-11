@@ -1,22 +1,23 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Button } from '@mui/joy'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
   const location = useLocation()
   const path = location.pathname
-  console.log(path)
+  const navigate = useNavigate()
 
   return (
-    <nav className="flex gap-3 my-3">
-      <Link className={`btn-light ${path === '/' ? 'bg-gray-200' : ''}`} to="/">
-        Home
-      </Link>
-      <Link className={`btn-light ${path === '/quill' ? 'bg-gray-200' : ''}`} to="/quill">
+    <div className="navbar">
+      <Button variant={path === '/quill' ? 'solid' : 'outlined'} onClick={() => navigate('/quill')}>
         Quill
-      </Link>
-      <Link className={`btn-light ${path === '/lexical' ? 'bg-gray-200' : ''}`} to="/lexical">
+      </Button>
+      <Button variant={path === '/lexical' ? 'solid' : 'outlined'} onClick={() => navigate('/lexical')}>
         Lexical
-      </Link>
-    </nav>
+      </Button>
+      <Button variant={path === '/verbum' ? 'solid' : 'outlined'} onClick={() => navigate('/verbum')}>
+        Verbum
+      </Button>
+    </div>
   )
 }
 

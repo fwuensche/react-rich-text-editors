@@ -12,6 +12,10 @@ function injectVariableContent(node) {
   if (textContent.includes('{{patient_name}}')) {
     node.setTextContent(textContent.replace('{{patient_name}}', 'John Doe'))
   }
+
+  if (textContent.includes('{{patient_name}}')) {
+    node.setTextContent(textContent.replace('{{patient_name}}', 'John Doe'))
+  }
 }
 
 const VariablesPlugin = () => {
