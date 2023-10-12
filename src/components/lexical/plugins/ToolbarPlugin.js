@@ -74,11 +74,11 @@ const blockTypeToBlockName = {
 
 const blockTypeToBlockIcon = {
   code: <Code />,
-  h1: 'H1',
-  h2: 'H2',
-  h3: 'H3',
-  h4: 'H4',
-  h5: 'H5',
+  h1: <div style={{ padding: '2px' }}>H1</div>,
+  h2: <div style={{ padding: '2px' }}>H2</div>,
+  h3: <div style={{ padding: '2px' }}>H3</div>,
+  h4: <div style={{ padding: '2px' }}>H4</div>,
+  h5: <div style={{ padding: '2px' }}>H5</div>,
   ol: <FormatListNumbered />,
   paragraph: <Subject />,
   quote: <FormatQuote />,
@@ -391,37 +391,37 @@ const BlockOptionsDropdownList = ({ editor, blockType, toolbarRef, setShowBlockO
     <div className="dropdown" ref={dropDownRef}>
       <button className="item" onClick={formatParagraph}>
         {blockTypeToBlockIcon['paragraph']}
-        <span className="text ml-2">Normal</span>
+        <span className="text">Normal</span>
         {blockType === 'paragraph' && <span className="active" />}
       </button>
       <button className="item" onClick={formatLargeHeading}>
         {blockTypeToBlockIcon['h1']}
-        <span className="text ml-2">Large Heading</span>
+        <span className="text">Large Heading</span>
         {blockType === 'h1' && <span className="active" />}
       </button>
       <button className="item" onClick={formatSmallHeading}>
         {blockTypeToBlockIcon['h2']}
-        <span className="text ml-2">Small Heading</span>
+        <span className="text">Small Heading</span>
         {blockType === 'h2' && <span className="active" />}
       </button>
       <button className="item" onClick={formatBulletList}>
         {blockTypeToBlockIcon['ul']}
-        <span className="text ml-2">Bullet List</span>
+        <span className="text">Bullet List</span>
         {blockType === 'ul' && <span className="active" />}
       </button>
       <button className="item" onClick={formatNumberedList}>
         {blockTypeToBlockIcon['ol']}
-        <span className="text ml-2">Numbered List</span>
+        <span className="text">Numbered List</span>
         {blockType === 'ol' && <span className="active" />}
       </button>
       <button className="item" onClick={formatQuote}>
         {blockTypeToBlockIcon['quote']}
-        <span className="text ml-2">Quote</span>
+        <span className="text">Quote</span>
         {blockType === 'quote' && <span className="active" />}
       </button>
       <button className="item" onClick={formatCode}>
         {blockTypeToBlockIcon['code']}
-        <span className="text ml-2">Code Block</span>
+        <span className="text">Code Block</span>
         {blockType === 'code' && <span className="active" />}
       </button>
     </div>
@@ -531,8 +531,8 @@ const ToolbarPlugin = () => {
         INSERT_INLINE_VARIABLE_COMMAND,
         () => {
           const inlineVariableNode = $createInlineVariableNode('Patient Name')
-          const selection = $getSelection();
-          selection.insertNodes([inlineVariableNode]);
+          const selection = $getSelection()
+          selection.insertNodes([inlineVariableNode])
         },
         LowPriority
       )
@@ -589,7 +589,7 @@ const ToolbarPlugin = () => {
             className="toolbar-item block-controls"
             onClick={() => setShowBlockOptionsDropDown(!showBlockOptionsDropDown)}
           >
-            <span className="mr-2">{blockTypeToBlockIcon[blockType]}</span>
+            <span className={'icon'}>{blockTypeToBlockIcon[blockType]}</span>
             <span className="text">{blockTypeToBlockName[blockType]}</span>
             <ExpandMore />
           </button>

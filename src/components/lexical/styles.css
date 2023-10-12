@@ -294,6 +294,11 @@ pre::-webkit-scrollbar-thumb {
   vertical-align: middle;
 }
 
+.toolbar button.toolbar-item.block-controls .icon {
+  font-size: 14px;
+  height: 14px;
+}
+
 .toolbar button.toolbar-item:disabled {
   cursor: not-allowed;
 }
@@ -423,6 +428,14 @@ pre::-webkit-scrollbar-thumb {
   border-radius: 8px;
   border: 0;
   min-width: 268px;
+}
+
+.dropdown .item .text {
+  margin-left: 6px;
+}
+
+.dropdown .item svg {
+  height: 18px;
 }
 
 .dropdown .item .active {
