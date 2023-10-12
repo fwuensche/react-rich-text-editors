@@ -9,7 +9,7 @@ import {
 } from '@lexical/list'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { $createHeadingNode, $createQuoteNode, $isHeadingNode } from '@lexical/rich-text'
-import { $isAtNodeEnd, $isParentElementRTL, $wrapNodes } from '@lexical/selection'
+import { $isAtNodeEnd, $wrapNodes } from '@lexical/selection'
 import { $getNearestNodeOfType, $insertNodeToNearestRoot, mergeRegister } from '@lexical/utils'
 import {
   AlignHorizontalCenter,
@@ -437,7 +437,6 @@ const ToolbarPlugin = () => {
   const [selectedElementKey, setSelectedElementKey] = useState(null)
   const [showBlockOptionsDropDown, setShowBlockOptionsDropDown] = useState(false)
   const [codeLanguage, setCodeLanguage] = useState('')
-  const [isRTL, setIsRTL] = useState(false)
   const [isLink, setIsLink] = useState(false)
   const [isBold, setIsBold] = useState(false)
   const [isItalic, setIsItalic] = useState(false)
@@ -472,7 +471,6 @@ const ToolbarPlugin = () => {
       setIsUnderline(selection.hasFormat('underline'))
       setIsStrikethrough(selection.hasFormat('strikethrough'))
       setIsCode(selection.hasFormat('code'))
-      setIsRTL($isParentElementRTL(selection))
 
       // Update links
       const node = getSelectedNode(selection)
