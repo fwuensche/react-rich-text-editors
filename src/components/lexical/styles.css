@@ -574,3 +574,12 @@ pre::-webkit-scrollbar-thumb {
   color: #777;
   width: 100%;
 }
+
+.editor-input blockquote {
+  border-left: 4px solid #ddd;
+  padding: 0 15px;
+  color: #777;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-left: 0;
+}
