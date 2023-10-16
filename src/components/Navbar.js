@@ -14,9 +14,6 @@ const Navbar = () => {
       <Button variant={path === '/lexical' ? 'solid' : 'outlined'} onClick={() => navigate('/lexical')}>
         Lexical
       </Button>
-      <Button variant={path === '/verbum' ? 'solid' : 'outlined'} onClick={() => navigate('/verbum')}>
-        Verbum (to be removed)
-      </Button>
     </div>
   )
 }
