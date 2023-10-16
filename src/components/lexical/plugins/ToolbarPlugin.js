@@ -11,6 +11,7 @@ import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext
 import { $createHeadingNode, $createQuoteNode, $isHeadingNode } from '@lexical/rich-text'
 import { $isAtNodeEnd, $wrapNodes } from '@lexical/selection'
 import { $getNearestNodeOfType, $insertNodeToNearestRoot, mergeRegister } from '@lexical/utils'
+import { INSERT_TABLE_COMMAND } from '@lexical/table'
 import {
   AlignHorizontalCenter,
   AlignHorizontalLeft,
@@ -28,7 +29,8 @@ import {
   Redo,
   StrikethroughS,
   Subject,
-  Undo,
+  TableChart,
+  Undo
 } from '@mui/icons-material'
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail'
 import { Dropdown, Menu, MenuButton, MenuItem } from '@mui/joy'
@@ -698,6 +700,16 @@ const ToolbarPlugin = () => {
               </MenuItem>
             </Menu>
           </Dropdown>
+          <button onClick={() => editor.dispatchCommand(INSERT_TABLE_COMMAND, {
+            columns: 5,
+            rows: 5,
+            includeHeaders: {
+              rows: true,
+              columns: true
+            }
+          })} className="toolbar-item">
+            <TableChart />
+          </button>
         </>
       )}
     </div>

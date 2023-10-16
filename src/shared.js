@@ -30,5 +30,25 @@ and more recently with desktop publishing software like Aldus PageMaker includin
 <pre>const foo = "bar";
 console.log(foo);</pre>
 
+<p>And a table : </p>
+
+<table>
+<tr>
+<th></th>
+<th>Col1</th>
+<th>Col2</th>
+</tr>
+<tr>
+<th>Row1</th>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>Row2</th>
+<td></td>
+<td></td>
+</tr>
+</table>
+
 <p>And a heart emoji to finish with good vibes ❤️</p>
 `

@@ -19,6 +19,12 @@ import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPl
 import { TRANSFORMERS } from '@lexical/markdown'
 import { HeadingNode, QuoteNode } from '@lexical/rich-text'
 import { LinkNode } from '@lexical/link'
+import { TablePlugin } from '@lexical/react/LexicalTablePlugin'
+import { useState} from 'react';
+import TableCellResizerPlugin from './plugins/TableCellResizer'
+import TableCellActionMenuPlugin from './plugins/TableCellActionMenuPlugin'
+import { TableCellNode, TableNode, TableRowNode } from '@lexical/table';
+import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary'
 
 const Placeholder = () => <div className="editor-placeholder">Enter some rich text...</div>
 
@@ -37,6 +43,9 @@ const editorConfig = {
       underlineStrikethrough: 'editor-text-underlineStrikethrough',
       code: 'editor-text-code',
     },
+    table: 'PlaygroundEditorTheme__table',
+    tableCell: 'PlaygroundEditorTheme__tableCell',
+    tableCellHeader: 'PlaygroundEditorTheme__tableCellHeader',
   },
   onError(error) {
     throw error
@@ -52,10 +61,21 @@ const editorConfig = {
     BlockVariableNode,
     InlineVariableNode,
     EmojiNode,
+    TableNode,
+    TableCellNode,
+    TableRowNode
   ],
 }
 
 const Lexical = () => {
+  const [floatingAnchorElem, setFloatingAnchorElem] =  useState(null);
+
+  const onRef = (_floatingAnchorElem) => {
+    if (_floatingAnchorElem !== null) {
+      setFloatingAnchorElem(_floatingAnchorElem);
+    }
+  };
+
   return (
     <div className="flex flex-col">
       <LexicalComposer initialConfig={editorConfig}>
@@ -65,12 +85,26 @@ const Lexical = () => {
           <EmojisPlugin />
           <ToolbarPlugin />
           <VariablesPlugin />
-          <InitialContentFromHtmlPlugin initialContent={INITIAL_CONTENT} />
           <RichTextPlugin
-            contentEditable={<ContentEditable className="editor-input" />}
-            placeholder={<Placeholder />}
+            contentEditable={
+              <div className="editor-scroller">
+                <div className="editor" ref={onRef}>
+                  <ContentEditable className="editor-input" />
+                </div>
+              </div>
+            }
+            placeholder={<Placeholder/>}
           />
+          <TablePlugin />
+          <TableCellResizerPlugin />
+          <InitialContentFromHtmlPlugin initialContent={INITIAL_CONTENT} />
           <HistoryPlugin />
+          {floatingAnchorElem && (
+            <TableCellActionMenuPlugin
+              anchorElem={floatingAnchorElem}
+              cellMerge={true}
+            />
+          )}
         </div>
       </LexicalComposer>
       <ShowSourceButton editor="lexical" />
