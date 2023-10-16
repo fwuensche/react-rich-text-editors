@@ -20,11 +20,11 @@ import { TRANSFORMERS } from '@lexical/markdown'
 import { HeadingNode, QuoteNode } from '@lexical/rich-text'
 import { LinkNode } from '@lexical/link'
 import { TablePlugin } from '@lexical/react/LexicalTablePlugin'
-import { useState} from 'react';
+import { useState } from 'react'
 import TableCellResizerPlugin from './plugins/TableCellResizer'
 import TableCellActionMenuPlugin from './plugins/TableCellActionMenuPlugin'
-import { TableCellNode, TableNode, TableRowNode } from '@lexical/table';
-import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary'
+import { TableCellNode, TableNode, TableRowNode } from '@lexical/table'
+import { DropdownNode } from './nodes/DropdownNode'
 
 const Placeholder = () => <div className="editor-placeholder">Enter some rich text...</div>
 
@@ -63,18 +63,19 @@ const editorConfig = {
     EmojiNode,
     TableNode,
     TableCellNode,
-    TableRowNode
+    TableRowNode,
+    DropdownNode,
   ],
 }
 
 const Lexical = () => {
-  const [floatingAnchorElem, setFloatingAnchorElem] =  useState(null);
+  const [floatingAnchorElem, setFloatingAnchorElem] = useState(null)
 
   const onRef = (_floatingAnchorElem) => {
     if (_floatingAnchorElem !== null) {
-      setFloatingAnchorElem(_floatingAnchorElem);
+      setFloatingAnchorElem(_floatingAnchorElem)
     }
-  };
+  }
 
   return (
     <div className="flex flex-col">
@@ -93,18 +94,13 @@ const Lexical = () => {
                 </div>
               </div>
             }
-            placeholder={<Placeholder/>}
+            placeholder={<Placeholder />}
           />
           <TablePlugin />
           <TableCellResizerPlugin />
           <InitialContentFromHtmlPlugin initialContent={INITIAL_CONTENT} />
           <HistoryPlugin />
-          {floatingAnchorElem && (
-            <TableCellActionMenuPlugin
-              anchorElem={floatingAnchorElem}
-              cellMerge={true}
-            />
-          )}
+          {floatingAnchorElem && <TableCellActionMenuPlugin anchorElem={floatingAnchorElem} cellMerge={true} />}
         </div>
       </LexicalComposer>
       <ShowSourceButton editor="lexical" />

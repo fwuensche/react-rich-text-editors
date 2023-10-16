@@ -1,5 +1,6 @@
 export const INITIAL_CONTENT = `
 <p>Dear {{patient_name}} <strong><- this is a variable</strong></p>
+<p>Following the consultation about {{dropdown:knee surgery|arm surgery|brain damage}}, I'd like to share with you the following information.</p>
 <p>My dear patient is text of the <i>printing and typesetting</i> industry.
 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
 when an unknown printer took a galley of type and scrambled it to make a type specimen book.
@@ -51,4 +52,8 @@ console.log(foo);</pre>
 </table>
 
 <p>And a heart emoji to finish with good vibes ❤️</p>
+
+<p>{{dropdown:Best regards|Sincerely|Yours truly|Cordially}},</p>
+
+<p>{{practitioner_name}}</p>
 `
