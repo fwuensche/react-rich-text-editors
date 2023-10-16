@@ -585,9 +585,6 @@ pre::-webkit-scrollbar-thumb {
   margin-left: 0;
 }
 
-
-
-
 .PlaygroundEditorTheme__table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -609,7 +606,6 @@ pre::-webkit-scrollbar-thumb {
   text-align: start;
 }
 
-
 .table-cell-action-button-container {
   position: absolute;
   top: 0;
@@ -624,10 +620,14 @@ pre::-webkit-scrollbar-thumb {
   align-items: center;
   border: 0;
   position: relative;
-  border-radius: 15px;
+  border-radius: 100%;
   color: #222;
   display: inline-block;
   cursor: pointer;
+  height: 24px;
+  width: 24px;
+  padding-top: 2px;
+  padding-left: 2px;
 }
 
 .editor-scroller {
