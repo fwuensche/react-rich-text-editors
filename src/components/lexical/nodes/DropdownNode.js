@@ -18,16 +18,42 @@ export class DropdownNode extends DecoratorNode {
     const options = this.__options
     const div = document.createElement('div')
     div.style.display = 'contents'
-    div.innerHTML = `<select name="pets" id="pet-select">
+    div.innerHTML = this.generateSelector(options)
+    return div
+  }
+
+  generateSelector(options) {
+    return `<select name="pets" id="pet-select">
     <option value="">--Please choose an option--</option>
     ${options.map((option) => `<option value="">${option}</option>`)}
     </select>`
-    return div
   }
 
   updateDOM() {
     return false
   }
+
+  /**
+   * @returns {import('lexical').DOMExportOutput}
+   */
+  exportDOM() {
+    const element = document.createElement('span')
+    element.textContent = '{{dropdown:' + this.__options.join('|') + '}}'
+    return {
+      element,
+    }
+  }
+
+  /**
+   * @returns {import('lexical').SerializedLexicalNode}
+   */
+  exportJSON() {
+    return {
+      type: 'dropdown-node',
+      version: 1,
+    }
+  }
+
 
   decorate(editor) {
     return undefined
